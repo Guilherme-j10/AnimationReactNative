@@ -1,0 +1,12 @@
+{
+  "name": "fuuckanimateio",
+  "displayName": "fuuckanimateio",
+  "expo": {
+    "name": "fuuckanimateio",
+    "slug": "fuuckanimateio",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
