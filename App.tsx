@@ -1,19 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'react-native';
+import { Initial } from './src/screens/Initial';
+import AppLoading from 'expo-app-loading';
+import {
+  useFonts,
+  BigShouldersDisplay_100Thin,
+  BigShouldersDisplay_300Light,
+  BigShouldersDisplay_400Regular,
+  BigShouldersDisplay_500Medium,
+  BigShouldersDisplay_600SemiBold,
+  BigShouldersDisplay_700Bold,
+  BigShouldersDisplay_800ExtraBold,
+  BigShouldersDisplay_900Black,
+} from '@expo-google-fonts/big-shoulders-display';
 
 export default function App() {
+
+  let [fontsLoaded] = useFonts({
+    BigShouldersDisplay_100Thin,
+    BigShouldersDisplay_300Light,
+    BigShouldersDisplay_400Regular,
+    BigShouldersDisplay_500Medium,
+    BigShouldersDisplay_600SemiBold,
+    BigShouldersDisplay_700Bold,
+    BigShouldersDisplay_800ExtraBold,
+    BigShouldersDisplay_900Black,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <>
+      <StatusBar backgroundColor='transparent' translucent={true} barStyle='light-content' />
+      <Initial />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
